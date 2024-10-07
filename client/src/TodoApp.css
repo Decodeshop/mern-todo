@@ -1,0 +1,79 @@
+/* TodoApp.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background for the entire page */
+    color: #333; /* Dark text for better readability */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #007bff; /* Title color */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    width: 300px; /* Set a fixed width */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    margin-left: 10px; /* Space between input and button */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-between; /* Space between task text and icons */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space between items */
+    padding: 10px; /* Padding for items */
+    background-color: #ffffff; /* White background for list items */
+    border-radius: 5px; /* Rounded corners for items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.icon-container {
+    display: flex; /* Use flexbox for the icons container */
+}
+
+.icon-button {
+    border: none;
+    background: #007bff; /* Blue background for icons */
+    color: white; /* White icon color */
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 20px; /* Padding for a clickable area */
+    /* border-radius: 50%; Circular buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
+}
+
+.icon-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white; /* Keep icon color white on hover */
+}
+
+.completed {
+    text-decoration: line-through; /* Strikethrough for completed tasks */
+    color: #999; /* Gray color for completed tasks */
+}
