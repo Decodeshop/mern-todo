@@ -13,7 +13,7 @@ const TodoApp = () => {
     // Fetch todos from the server
     const fetchTodos = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/todos');
+            const response = await axios.get('https://mern-todo-rosy-eight.vercel.app/');
             setTodos(response.data);
         } catch (error) {
             console.error('Error fetching todos:', error);
@@ -26,7 +26,7 @@ const TodoApp = () => {
         if (!newTodo) return; // Prevent adding empty tasks
 
         try {
-            const response = await axios.post('http://localhost:5000/todos', {
+            const response = await axios.post('https://mern-todo-rosy-eight.vercel.app/', {
                 task: newTodo,
                 completed: false,
             });
@@ -44,7 +44,7 @@ const TodoApp = () => {
             const todoToUpdate = todos.find(todo => todo._id === id);
             const updatedTodo = { ...todoToUpdate, completed: !todoToUpdate.completed }; // Toggle completed status
 
-            const response = await axios.put(`http://localhost:5000/todos/${id}`, updatedTodo);
+            const response = await axios.put(`https://mern-todo-rosy-eight.vercel.app/${id}`, updatedTodo);
             setTodos(todos.map(todo => (todo._id === id ? response.data : todo))); // Update the state
         } catch (error) {
             console.error('Error updating todo:', error);
@@ -64,7 +64,7 @@ const TodoApp = () => {
         if (!editTodoValue) return; // Prevent updating to empty task
 
         try {
-            const response = await axios.put(`http://localhost:5000/todos/${editTodoId}`, {
+            const response = await axios.put(`https://mern-todo-rosy-eight.vercel.app/${editTodoId}`, {
                 task: editTodoValue,
                 completed: false,
             });
@@ -81,7 +81,7 @@ const TodoApp = () => {
     // Delete a todo
     const deleteTodo = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/todos/${id}`); // Send DELETE request
+            await axios.delete(`https://mern-todo-rosy-eight.vercel.app/${id}`); // Send DELETE request
             setTodos(todos.filter(todo => todo._id !== id)); // Remove the deleted todo from the state
         } catch (error) {
             console.error('Error deleting todo:', error);
